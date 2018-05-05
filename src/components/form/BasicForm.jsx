@@ -8,24 +8,24 @@ import HorizontalForm from './HorizontalForm';
 
 const residences = [{
     value: 'zhejiang',
-    label: 'Zhejiang',
+    label: '浙江',
     children: [{
         value: 'hangzhou',
-        label: 'Hangzhou',
+        label: '杭州',
         children: [{
             value: 'xihu',
-            label: 'West Lake',
+            label: '西湖',
         }],
     }],
 }, {
     value: 'jiangsu',
-    label: 'Jiangsu',
+    label: '江苏',
     children: [{
         value: 'nanjing',
-        label: 'Nanjing',
+        label: '南京',
         children: [{
             value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
+            label: '中华门',
         }],
     }],
 }];
@@ -62,6 +62,7 @@ class BasicForms extends Component {
         callback();
     };
     render() {
+        //表单校验
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
             labelCol: {
@@ -94,6 +95,7 @@ class BasicForms extends Component {
         );
         return (
             <div className="gutter-example">
+                {/*Row Col Card都是用来进行布局的*/}
                 <Row gutter={16}>
                     <Col className="gutter-row" span={12}>
                         <div className="gutter-box">
@@ -104,8 +106,10 @@ class BasicForms extends Component {
                                         label="邮箱"
                                         hasFeedback
                                     >
+                                        {/*下面的就是校验，()()()立即执行函数*/}
                                         {getFieldDecorator('email', {
                                             rules: [{
+                                                // 类型，提示
                                                 type: 'email', message: '请输入合理的邮箱地址!',
                                             }, {
                                                 required: true, message: '请输入邮箱地址!',

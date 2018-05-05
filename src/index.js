@@ -5,7 +5,8 @@ import App from './App';
 import {Router, Route, hashHistory, IndexRedirect} from 'react-router'
 
 //自有组件
-import BasicForm from './components/form/BasicForm'
+import BasicForm from './components/form/BasicForm';
+import WrappedForm from './components/form/WrappedForm';
 import Page from './components/Page'
 import './index.css';
 
@@ -18,7 +19,8 @@ ReactDOM.render(
             <IndexRedirect to={'/app'}/>
             <Route path={'app'} components={App}>
                 {/*嵌套路由，子路由渲染，也就是说，在Content中需要出现我们的其他组件*/}
-                <Route path={'form'} components={BasicForm}/>
+                <Route path={'form/basicform'} components={BasicForm}/>
+                <Route path={'form/wrappedform'} components={WrappedForm}/>
             </Route>
         </Route>
 

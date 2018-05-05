@@ -78,7 +78,8 @@ class SiderCustom extends Component{
                         key={"/app/form"}
                         title={<span><Icon type={"edit"} /><span className={"nav-text"}>表单</span></span>}
                     >
-                        <Menu.Item key={"/app/basicForm"}><Link to={'/app/form/basicForm'}>基础表单</Link></Menu.Item>
+                        <Menu.Item key={"/app/form/basicform"}><Link to={'/app/form/basicform'}>基础表单</Link></Menu.Item>
+                        <Menu.Item key={"/app/form/wrappedform"}><Link to={'/app/form/wrappedform'}>高级表单</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>

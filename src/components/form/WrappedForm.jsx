@@ -184,5 +184,5 @@ class Demo extends React.Component {
     }
 }
 
-const WrappedDemo = Form.create()(Demo);
-export default WrappedDemo
+const WrappedForm = Form.create()(Demo);
+export default WrappedForm

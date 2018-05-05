@@ -18,7 +18,7 @@ class App extends Component {
             <Layout>
                 <HeaderCustom/>
                 <Content style={{ margin: '0 16px', overflow: 'initial' }}>
-                    {/*引入子组件*/}
+                    {/*引入子组件，想要哪一块的内容是可以动态变化的，那就让它渲染*/}
                     {this.props.children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
