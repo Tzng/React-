@@ -18,7 +18,7 @@ class HeaderCustom extends Component {
             <Header style={headerStyle}>
                 <Menu
                     mode="horizontal" //水平模式
-                    style={{lineHeght: '64px', float: 'right'}}
+                    style={{lineHeight: '64px', float: 'right'}}
                 >
                     <Menu.Item key="1">
                         {/*设置位置*/}
