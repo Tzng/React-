@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import React,{Component} from 'react';
+import {Menu, Icon, Layout,} from 'antd';
+
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
+//引入路由
 import { Link } from 'react-router';
 
-class SideCustorm extends Component{
+class SiderCustom extends Component{
 
     state = {
         //是否折叠
         collapsed: false,
         //菜单类型
         mode: 'inline',
-        openkey: '',
+        openKey: '',
         selectedKey: ''
     };
 
-    componentDidMount(){
+    componentDidMount() {
         const _path = this.props.path;
         this.setState({
             openKey: _path.substr(0, _path.lastIndexOf('/')),
             selectedKey: _path
-        })
+        });
     }
 
     //展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发
@@ -30,21 +32,20 @@ class SideCustorm extends Component{
             collapsed,
             mode: collapsed ? 'vertical' : 'inline',
         });
-    }
-
+    };
     menuClick = e => {
         console.log(this.state);
         this.setState({
             selectedKey: e.key
         });
-    }
 
+    };
     openMenu = v => {
-        console.log(e);
+        console.log(v);
         this.setState({
-            openKey: v[v.length -1]
+            openKey: v[v.length - 1]
         })
-    }
+    };
 
     render(){
         return(
@@ -59,10 +60,10 @@ class SideCustorm extends Component{
                 {/*导航菜单，就是左边那一片大的*/}
                 <Menu
                     onClick={this.menuClick}
-                    them="dark"
+                    theme="dark"
                     mode={this.state.mode}
                     selectedKeys={[this.state.selectedKey]}
-                    openKeys={[this.state.openKeys]}
+                    openKeys={[this.state.openKey]}
                     onOpenChange={this.openMenu}
                 >
                     {/*子菜单一个一个的菜单*/}
@@ -94,4 +95,4 @@ class SideCustorm extends Component{
     }
 }
 
-export default SiderCustom
+export default SiderCustom;
