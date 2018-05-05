@@ -11,6 +11,7 @@ import Page from './components/Page'
 import './index.css';
 import BasicTables from "./components/tables/BasicTables";
 import AdvancedTables from "./components/tables/AdvancedTables";
+import AsynchronousTable from "./components/tables/AsynchronousTable";
 
 ReactDOM.render(
     // 引入路由
@@ -29,6 +30,7 @@ ReactDOM.render(
                 <Router path={'table'}>
                     <Route path={'basictables'} component={BasicTables}/>
                     <Route path={'advancedtables'} component={AdvancedTables}/>
+                    <Route path={'asynchronoustable'} component={AsynchronousTable}/>
                 </Router>
             </Route>
         </Route>

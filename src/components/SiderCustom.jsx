@@ -71,6 +71,7 @@ class SiderCustom extends Component{
                         key={"/app/table"}
                         title={<span><Icon type={"copy"} /><span className={"nav-text"}>表格</span></span>}
                     >
+                        <Menu.Item key="/app/table/asynchronoustable"><Link to={'/app/table/asynchronoustable'}>GitHub热门JS代码</Link></Menu.Item>
                         <Menu.Item key="/app/table/advancedtables"><Link to={'/app/table/advancedtables'}>高级表格</Link></Menu.Item>
                         <Menu.Item key="/app/table/basictables"><Link to={'/app/table/basictables'}>基础表格</Link></Menu.Item>
                     </SubMenu>

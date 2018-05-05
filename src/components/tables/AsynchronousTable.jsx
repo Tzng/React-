@@ -23,27 +23,38 @@ const columns = [{
 }];
 
 class AsynchronousTable extends React.Component {
+    //数据状态
     state = {
-        selectedRowKeys: [],  // Check here to configure the default column
-        loading: false,
-        data: []
+        selectedRowKeys: [],  // 选中的行
+        loading: false, //数据是否加载完成
+        data: [], //数据，初始化为空
     };
-    componentDidMount(){
-        this.start();
-    }
-    start = () => {
-        // 拿后台数据的
-        this.setState({loading: true});
+
+    //当组件被加载的时候运行这个方法
+    start = () =>{
+        //修改状态为正在拿数据
+        this.setState({loading: true})
+        //使用axios来获取数据
         getPros().then(res => {
             this.setState({
+                //得到数据
                 data: [...res.data.map(val => {
                     val.key = val.id;
+                    //数据赋值，数据重构，把id给key
                     return val;
                 })],
+                //修改状态
                 loading: false
             })
         })
     }
+
+    //在挂载的时候运行
+    componentDidMount(){
+        this.start();
+    }
+
+    //点击事件
     onSelectChange = (selectedRowKeys) => {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
         this.setState({ selectedRowKeys });
@@ -61,7 +72,7 @@ class AsynchronousTable extends React.Component {
                 <Row gutter={16}>
                     <Col className="gutter-row" span={24}>
                         <div className="gutter-box">
-                            <Card title="异步表格--GitHub今日热门javascript项目" bordered={false}>
+                            <Card title="异步表格--GitHub今日热门java项目" bordered={false}>
                                 <div style={{ marginBottom: 16 }}>
                                     <Button type="primary" onClick={this.start}
                                             disabled={loading} loading={loading}
