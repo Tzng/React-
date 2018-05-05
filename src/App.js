@@ -18,7 +18,8 @@ class App extends Component {
             <Layout>
                 <HeaderCustom/>
                 <Content style={{ margin: '0 16px', overflow: 'initial' }}>
-                    Hello
+                    {/*引入子组件*/}
+                    {this.props.children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
                     我是底部文件
