@@ -1,14 +1,18 @@
 import React from 'react';
 import { Form, Icon, Button, Checkbox, Input } from 'antd';
+//引入路由
+import { Link } from 'react-router';
 
 const FormItem = Form.Item;
 
 class Login extends React.Component {
     handleSubmit = (e) => {
+        console.log("开始登陆");
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                <Link to={'/app/table/basictables'}/>
             }
         });
     };
@@ -18,7 +22,7 @@ class Login extends React.Component {
             <div className="login">
                 <div className="login-form" >
                     <div className="login-logo">
-                        <span>React Admin</span>
+                        <span>管理中心</span>
                     </div>
                     <Form onSubmit={this.handleSubmit} style={{maxWidth: '300px'}}>
                         <FormItem>

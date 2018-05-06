@@ -5,6 +5,7 @@ const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 //引入路由
 import { Link } from 'react-router';
+import Spins from "./ui/Spins";
 
 class SiderCustom extends Component{
 
@@ -93,6 +94,14 @@ class SiderCustom extends Component{
                         title={<span><Icon type={"scan"} /><span className="nav-text">UI组件</span></span>}
                     >
                         <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}/>按钮组件</Menu.Item>
+                        <Menu.Item key={"/app/ui/spins"}><Link to={'app/ui/spins'}/>第三方进度组件</Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="{/app/charts}"
+                        title={<span><Icon type={"area-chart"}/><span className="nav-text">图表组件</span></span>}
+                    >
+                        <Menu.Item key={"/app/charts/echarts"}><Link to={'app/charts/echarts'}/>Echarts组件</Menu.Item>
+
                     </SubMenu>
                 </Menu>
                 <style>

@@ -14,6 +14,8 @@ import AdvancedTables from "./components/tables/AdvancedTables";
 import AsynchronousTable from "./components/tables/AsynchronousTable";
 import Login from "./components/pages/Login";
 import Buttons from './components/ui/Buttons';
+import Spins from "./components/ui/Spins";
+import Echarts from "./components/charts/Echarts";
 
 ReactDOM.render(
     // 引入路由
@@ -36,6 +38,10 @@ ReactDOM.render(
                 </Router>
                 <Router path={'ui'}>
                     <Route path={'buttons'} component={Buttons}/>
+                    <Route path={'spins'} components={Spins}/>
+                </Router>
+                <Router path={'charts'}>
+                    <Route path={'echarts'} components={Echarts}/>
                 </Router>
             </Route>
             <Route path={'login'} component={Login}/>
