@@ -68,6 +68,12 @@ class SiderCustom extends Component{
                 >
                     {/*子菜单一个一个的菜单*/}
                     <SubMenu
+                        key="page"
+                        title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
+                    >
+                        <Menu.Item key="/login"><Link to={'/login'}>登录</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
                         key={"/app/table"}
                         title={<span><Icon type={"copy"} /><span className={"nav-text"}>表格</span></span>}
                     >
@@ -81,6 +87,12 @@ class SiderCustom extends Component{
                     >
                         <Menu.Item key={"/app/form/basicform"}><Link to={'/app/form/basicform'}>基础表单</Link></Menu.Item>
                         <Menu.Item key={"/app/form/wrappedform"}><Link to={'/app/form/wrappedform'}>高级表单</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="{/app/ui}"
+                        title={<span><Icon type={"scan"} /><span className="nav-text">UI组件</span></span>}
+                    >
+                        <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}/>按钮组件</Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
