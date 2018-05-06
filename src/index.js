@@ -17,6 +17,8 @@ import Buttons from './components/ui/Buttons';
 import Spins from "./components/ui/Spins";
 import Echarts from "./components/charts/Echarts";
 import Recharts from "./components/charts/Recharts";
+import Banners from "./components/ui/banners";
+import NotFound from "./components/pages/NotFound";
 
 ReactDOM.render(
     // 引入路由
@@ -40,6 +42,8 @@ ReactDOM.render(
                 <Router path={'ui'}>
                     <Route path={'buttons'} component={Buttons}/>
                     <Route path={'spins'} components={Spins}/>
+                    {/*轮播图*/}
+                    <Route path={'banners'} components={Banners}/>
                 </Router>
                 <Router path={'charts'}>
                     <Route path={'echarts'} components={Echarts}/>
@@ -47,6 +51,7 @@ ReactDOM.render(
                 </Router>
             </Route>
             <Route path={'login'} component={Login}/>
+            <Route path={'404'} components={NotFound}/>
         </Route>
 
     </Router>,

@@ -110,13 +110,13 @@ class Custom extends React.Component {
                         }}
                     />
                     <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-                        Ant Motion Banner
+                        厉害的轮播图
                     </TweenOne>
                     <TweenOne
                         className="banner-user-text"
                         animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
                     >
-                        The Fast Way Use Animation In React
+                       啦啦啦
                     </TweenOne>
                 </Element>
                 <Element key="bbb"
@@ -138,7 +138,7 @@ class Custom extends React.Component {
                         className="banner-user-text"
                         animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
                     >
-                        The Fast Way Use Animation In React
+                        这个图片就很强大了
                     </TweenOne>
                 </Element>
                 <Arrow arrowType="prev" key="prev" prefixCls="user-arrow" component={TweenOne}
