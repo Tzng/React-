@@ -16,6 +16,7 @@ import Login from "./components/pages/Login";
 import Buttons from './components/ui/Buttons';
 import Spins from "./components/ui/Spins";
 import Echarts from "./components/charts/Echarts";
+import Recharts from "./components/charts/Recharts";
 
 ReactDOM.render(
     // 引入路由
@@ -42,6 +43,7 @@ ReactDOM.render(
                 </Router>
                 <Router path={'charts'}>
                     <Route path={'echarts'} components={Echarts}/>
+                    <Route path={'recharts'} components={Recharts}/>
                 </Router>
             </Route>
             <Route path={'login'} component={Login}/>

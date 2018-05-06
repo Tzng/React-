@@ -98,10 +98,10 @@ class SiderCustom extends Component{
                     </SubMenu>
                     <SubMenu
                         key="{/app/charts}"
-                        title={<span><Icon type={"area-chart"}/><span className="nav-text">图表组件</span></span>}
+                        title={<span><Icon type={"area-chart"}/><span className="nav-text">统计分析</span></span>}
                     >
                         <Menu.Item key={"/app/charts/echarts"}><Link to={'app/charts/echarts'}/>Echarts组件</Menu.Item>
-
+                        <Menu.Item key={"/app/charts/recharts"}><Link to={'app/charts/recharts'}/>Recharts组件</Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
