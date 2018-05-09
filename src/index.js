@@ -23,6 +23,10 @@ import Modals from "./components/ui/Modals";
 import Notifications from "./components/ui/Notifications";
 import TabsCustom from "./components/ui/Tabs";
 import Wysiwyg from "./components/ui/Wysiwyg";
+import Gallery from "./components/ui/Gallery";
+import TextEditor from "./components/ui/BraftEditor"
+import ExampleAnimations from "./components/animation/ExampleAnimations";
+import BasicAnimations from "./components/animation/BasicAnimations";
 
 ReactDOM.render(
     // 引入路由
@@ -53,10 +57,16 @@ ReactDOM.render(
                     <Route path={'notifications'} components={Notifications}/>
                     <Route path={'tabs'} components={TabsCustom}/>
                     <Route path={'wysiwyg'} components={Wysiwyg}/>
+                    <Route path={'gallery'} components={Gallery}/>
+                    <Route path={'brafteditor'} components={TextEditor}/>
                 </Router>
                 <Router path={'charts'}>
                     <Route path={'echarts'} components={Echarts}/>
                     <Route path={'recharts'} components={Recharts}/>
+                </Router>
+                <Router path={'animation'}>
+                    <Route path={'baseicAnimations'} components={BasicAnimations}/>
+                    <Route path={'exampleAnimations'} components={ExampleAnimations}/>
                 </Router>
             </Route>
             <Route path={'login'} component={Login}/>

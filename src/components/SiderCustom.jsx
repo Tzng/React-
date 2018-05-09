@@ -100,7 +100,9 @@ class SiderCustom extends Component{
                         <Menu.Item key={"/app/ui/modals"}><Link to={'app/ui/modals'}>弹出框</Link></Menu.Item>
                         <Menu.Item key={"/app/ui/notifications"}><Link to={'app/ui/notifications'}>消息提示框</Link></Menu.Item>
                         <Menu.Item key={"/app/ui/tabs"}><Link to={'app/ui/tabs'}>标签页</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/wysiwyg"}><Link to={'app/ui/wysiwyg'}>富文本</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/wysiwyg"}><Link to={'app/ui/wysiwyg'}>国外的富文本</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/braftrditor"}><Link to={'app/ui/brafteditor'}>国内的富文本编辑器</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/gallery"}><Link to={'app/ui/gallery'}>画廊</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="{/app/charts}"
@@ -108,6 +110,13 @@ class SiderCustom extends Component{
                     >
                         <Menu.Item key={"/app/charts/echarts"}><Link to={'app/charts/echarts'}>Echarts组件</Link></Menu.Item>
                         <Menu.Item key={"/app/charts/recharts"}><Link to={'app/charts/recharts'}>Recharts组件</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="{/app/animation}"
+                        title={<span><Icon type={"area-chart"}/><span className="nav-text">动画</span></span>}
+                    >
+                        <Menu.Item key={"/app/animation/baseicAnimations"}><Link to={'app/animation/baseicAnimations'}>基础动画</Link></Menu.Item>
+                        <Menu.Item key={"/app/animation/exampleAnimations"}><Link to={'app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
