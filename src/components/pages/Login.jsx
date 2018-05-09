@@ -8,6 +8,7 @@ const FormItem = Form.Item;
 class Login extends React.Component {
     handleSubmit = (e) => {
         console.log("开始登陆");
+        //取消事件的默认动作。
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
