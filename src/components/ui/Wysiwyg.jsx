@@ -3,7 +3,9 @@ import { Row, Col, Card } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+//文本转HTML
 import draftToHtml from 'draftjs-to-html';
+//文本转Markdown
 import draftToMarkdown from 'draftjs-to-markdown';
 
 const rawContentState = {"entityMap":{"0":{"type":"IMAGE","mutability":"MUTABLE","data":{"src":"http://i.imgur.com/aMtBIep.png","height":"auto","width":"100%"}}},"blocks":[{"key":"9unl6","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"95kn","text":" ","type":"atomic","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":1,"key":0}],"data":{}},{"key":"7rjes","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]};
@@ -37,6 +39,7 @@ class Wysiwyg extends Component {
         });
     };
 
+    //原生的AJAX。没有做兼容性考虑
     imageUploadCallBack = file => new Promise(
         (resolve, reject) => {
             const xhr = new XMLHttpRequest(); // eslint-disable-line no-undef

@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Row, Col, Card, Button, notification, Icon, Select } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
 const { Option } = Select;
+// 放置的位置
 const options = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
 class Notifications extends Component {
+
+    constructor(props){
+        super(props)
+    }
+
+    componentDidMount(){
+        this.openNotification();
+    }
+
     openNotification = () => {
         notification.open({
             message: 'Notification Title',
@@ -14,16 +24,19 @@ class Notifications extends Component {
         const args = {
             message: 'Notification Title',
             description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+            //0就是不会自动关闭
             duration: 0,
         };
         notification.open(args);
     };
+    //打开带通知图标的
     openNotificationWithIcon = (type) => {
         notification[type]({
             message: 'Notification Title',
             description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
         });
     };
+    //带有按钮的,点击事件
     openNotification3 = () => {
         const key = `open${Date.now()}`;
         const btnClick = function () {
@@ -32,7 +45,7 @@ class Notifications extends Component {
         };
         const btn = (
             <Button type="primary" size="small" onClick={btnClick}>
-                Confirm
+                查看详情
             </Button>
         );
         notification.open({

@@ -20,6 +20,9 @@ import Recharts from "./components/charts/Recharts";
 import Banners from "./components/ui/banners";
 import NotFound from "./components/pages/NotFound";
 import Modals from "./components/ui/Modals";
+import Notifications from "./components/ui/Notifications";
+import TabsCustom from "./components/ui/Tabs";
+import Wysiwyg from "./components/ui/Wysiwyg";
 
 ReactDOM.render(
     // 引入路由
@@ -47,6 +50,9 @@ ReactDOM.render(
                     <Route path={'banners'} components={Banners}/>
                     {/*按钮组件*/}
                     <Route path={'modals'} components={Modals}/>
+                    <Route path={'notifications'} components={Notifications}/>
+                    <Route path={'tabs'} components={TabsCustom}/>
+                    <Route path={'wysiwyg'} components={Wysiwyg}/>
                 </Router>
                 <Router path={'charts'}>
                     <Route path={'echarts'} components={Echarts}/>

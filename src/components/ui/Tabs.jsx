@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, Tabs, Icon, Radio, Button } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
+import SearchTable from "../tables/SearchTable";
 const TabPane = Tabs.TabPane;
 
 class TabsCustom extends Component {
@@ -68,9 +69,9 @@ class TabsCustom extends Component {
                         </div>
                         <div className="gutter-box">
                             <Card title="带图标" bordered={false}>
-                                <Tabs defaultActiveKey="2" style={{height: 150}}>
+                                <Tabs defaultActiveKey="2" style={{height: 500}}>
                                     <TabPane tab={<span><Icon type="apple" />Tab 1</span>} key="1">
-                                        Tab 1
+                                        <SearchTable/>
                                     </TabPane>
                                     <TabPane tab={<span><Icon type="android" />Tab 2</span>} key="2">
                                         Tab 2
