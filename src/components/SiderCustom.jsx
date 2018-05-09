@@ -5,6 +5,7 @@ const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 //引入路由
 import { Link } from 'react-router';
+import Spins from "./ui/Spins";
 
 class SiderCustom extends Component{
 
@@ -17,13 +18,13 @@ class SiderCustom extends Component{
         selectedKey: ''
     };
 
-    componentDidMount() {
-        const _path = this.props.path;
+    setMenuOpen = props => {
+        const {path} = props;
         this.setState({
-            openKey: _path.substr(0, _path.lastIndexOf('/')),
-            selectedKey: _path
+            openKey: path.substr(0, path.lastIndexOf('/')),
+            selectedKey: path
         });
-    }
+    };
 
     //展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发
     onCollapse = (collapsed) => {
@@ -72,6 +73,7 @@ class SiderCustom extends Component{
                         title={<span><Icon type="switcher" /><span className="nav-text">页面</span></span>}
                     >
                         <Menu.Item key="/login"><Link to={'/login'}>登录</Link></Menu.Item>
+                        <Menu.Item key="/404"><Link to={'/404'} >404页面</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key={"/app/table"}
@@ -92,7 +94,16 @@ class SiderCustom extends Component{
                         key="{/app/ui}"
                         title={<span><Icon type={"scan"} /><span className="nav-text">UI组件</span></span>}
                     >
-                        <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}/>按钮组件</Menu.Item>
+                        <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}>按钮组件</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/spins"}><Link to={'app/ui/spins'}>第三方进度组件</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/banners"}><Link to={'app/ui/banners'}>轮播图</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="{/app/charts}"
+                        title={<span><Icon type={"area-chart"}/><span className="nav-text">统计分析</span></span>}
+                    >
+                        <Menu.Item key={"/app/charts/echarts"}><Link to={'app/charts/echarts'}>Echarts组件</Link></Menu.Item>
+                        <Menu.Item key={"/app/charts/recharts"}><Link to={'app/charts/recharts'}>Recharts组件</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
