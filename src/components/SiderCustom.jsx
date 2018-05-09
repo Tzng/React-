@@ -97,6 +97,7 @@ class SiderCustom extends Component{
                         <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}>按钮组件</Link></Menu.Item>
                         <Menu.Item key={"/app/ui/spins"}><Link to={'app/ui/spins'}>第三方进度组件</Link></Menu.Item>
                         <Menu.Item key={"/app/ui/banners"}><Link to={'app/ui/banners'}>轮播图</Link></Menu.Item>
+                        <Menu.Item key={"/app/ui/modals"}><Link to={'app/ui/modals'}>弹出框</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="{/app/charts}"

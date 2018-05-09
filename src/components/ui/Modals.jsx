@@ -3,7 +3,7 @@ import { Row, Col, Card, Modal, Button } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
 const confirm = Modal.confirm;
 
-class S extends Component {
+class Modals extends Component {
     state = {
         visible: false,
         ModalText2: 'Content of the modal dialog',
@@ -182,6 +182,7 @@ class S extends Component {
                                     <Button type="primary" onClick={() => this.setModal1Visible(true)}>距离顶部20px</Button>
                                     <Modal
                                         title="20px to Top"
+                                        //样式配置
                                         style={{ top: 20 }}
                                         visible={this.state.modal1Visible}
                                         onOk={() => this.setModal1Visible(false)}
@@ -195,6 +196,7 @@ class S extends Component {
                                     <Button type="primary" onClick={() => this.setModal2Visible(true)}>垂直居中</Button>
                                     <Modal
                                         title="Vertically centered modal dialog"
+                                        // 对话框外层容器的类名，也就是配置modal的样式名字
                                         wrapClassName="vertical-center-modal"
                                         visible={this.state.modal2Visible}
                                         onOk={() => this.setModal2Visible(false)}
@@ -215,4 +217,4 @@ class S extends Component {
 }
 
 
-export default S;
+export default Modals;

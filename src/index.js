@@ -19,6 +19,7 @@ import Echarts from "./components/charts/Echarts";
 import Recharts from "./components/charts/Recharts";
 import Banners from "./components/ui/banners";
 import NotFound from "./components/pages/NotFound";
+import Modals from "./components/ui/Modals";
 
 ReactDOM.render(
     // 引入路由
@@ -44,6 +45,8 @@ ReactDOM.render(
                     <Route path={'spins'} components={Spins}/>
                     {/*轮播图*/}
                     <Route path={'banners'} components={Banners}/>
+                    {/*按钮组件*/}
+                    <Route path={'modals'} components={Modals}/>
                 </Router>
                 <Router path={'charts'}>
                     <Route path={'echarts'} components={Echarts}/>
