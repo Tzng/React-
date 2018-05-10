@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import './index.css';
+import './style/lib/animate.css';
 import App from './App';
 //第三方组件
 import {Router, Route, hashHistory, IndexRedirect} from 'react-router'
