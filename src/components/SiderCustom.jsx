@@ -23,7 +23,7 @@ class SiderCustom extends Component{
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
+        console.log("传递捡来的新地址："+nextProps);
         this.onCollapse(nextProps.collapsed);
         this.setMenuOpen(nextProps)
     }
@@ -34,6 +34,7 @@ class SiderCustom extends Component{
             openKey: path.substr(0, path.lastIndexOf('/')),
             selectedKey: path
         });
+        console.log(this.state)
     };
 
     //展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发
@@ -100,36 +101,36 @@ class SiderCustom extends Component{
                         key={"/app/form"}
                         title={<span><Icon type={"edit"} /><span className={"nav-text"}>表单</span></span>}
                     >
-                        <Menu.Item key={"/app/form/basicform"}><Link to={'/app/form/basicform'}>基础表单</Link></Menu.Item>
-                        <Menu.Item key={"/app/form/wrappedform"}><Link to={'/app/form/wrappedform'}>高级表单</Link></Menu.Item>
+                        <Menu.Item key="/app/form/basicform"><Link to={'/app/form/basicform'}>基础表单</Link></Menu.Item>
+                        <Menu.Item key="/app/form/wrappedform"><Link to={'/app/form/wrappedform'}>高级表单</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
-                        key="{/app/ui}"
+                        key={"/app/ui"}
                         title={<span><Icon type={"scan"} /><span className="nav-text">UI组件</span></span>}
                     >
-                        <Menu.Item key={"/app/ui/buttons"}><Link to={'app/ui/buttons'}>按钮组件</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/spins"}><Link to={'app/ui/spins'}>第三方进度组件</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/banners"}><Link to={'app/ui/banners'}>轮播图</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/modals"}><Link to={'app/ui/modals'}>弹出框</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/notifications"}><Link to={'app/ui/notifications'}>消息提示框</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/tabs"}><Link to={'app/ui/tabs'}>标签页</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/wysiwyg"}><Link to={'app/ui/wysiwyg'}>国外的富文本</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/braftrditor"}><Link to={'app/ui/brafteditor'}>国内的富文本编辑器</Link></Menu.Item>
-                        <Menu.Item key={"/app/ui/gallery"}><Link to={'app/ui/gallery'}>画廊</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/buttons"><Link to={'/app/ui/buttons'}>按钮组件</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/spins"><Link to={'/app/ui/spins'}>第三方进度组件</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/banners"><Link to={'/app/ui/banners'}>轮播图</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/modals"><Link to={'/app/ui/modals'}>弹出框</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/notifications"><Link to={'/app/ui/notifications'}>消息提示框</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/tabs"><Link to={'/app/ui/tabs'}>标签页</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/wysiwyg"><Link to={'/app/ui/wysiwyg'}>国外的富文本</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/braftrditor"><Link to={'/app/ui/brafteditor'}>国内的富文本编辑器</Link></Menu.Item>
+                        <Menu.Item key="/app/ui/gallery"><Link to={'/app/ui/gallery'}>画廊</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
-                        key="{/app/charts}"
+                        key={"/app/charts"}
                         title={<span><Icon type={"area-chart"}/><span className="nav-text">统计分析</span></span>}
                     >
-                        <Menu.Item key={"/app/charts/echarts"}><Link to={'app/charts/echarts'}>Echarts组件</Link></Menu.Item>
-                        <Menu.Item key={"/app/charts/recharts"}><Link to={'app/charts/recharts'}>Recharts组件</Link></Menu.Item>
+                        <Menu.Item key="/app/charts/echarts"><Link to={'/app/charts/echarts'}>Echarts组件</Link></Menu.Item>
+                        <Menu.Item key="/app/charts/recharts"><Link to={'/app/charts/recharts'}>Recharts组件</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
-                        key="{/app/animation}"
+                        key={"/app/animation"}
                         title={<span><Icon type={"area-chart"}/><span className="nav-text">动画</span></span>}
                     >
-                        <Menu.Item key={"/app/animation/baseicAnimations"}><Link to={'app/animation/baseicAnimations'}>基础动画</Link></Menu.Item>
-                        <Menu.Item key={"/app/animation/exampleAnimations"}><Link to={'app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
+                        <Menu.Item key={"/app/animation/baseicAnimations"}><Link to={'/app/animation/baseicAnimations'}>基础动画</Link></Menu.Item>
+                        <Menu.Item key={"/app/animation/exampleAnimations"}><Link to={'/app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>
