@@ -38,10 +38,12 @@ class BreadcrumbCustom extends React.Component {
             }),
             theme: (v.checked && themes['theme' + v.type]) || null
         }, () => {
+            //缓存主题
             localStorage.setItem('themes', JSON.stringify(this.state.themes));
         })
     };
     render() {
+        //展示切换主题按钮
         const themesTag = this.state.themes.map((v, i) => (
             <div className="pull-left y-center mr-m mb-s" key={i}>
                 <a className={`w-24 mr-s b-a ${v.type}`} />
@@ -57,8 +59,9 @@ class BreadcrumbCustom extends React.Component {
                     {first}
                     {second}
                 </Breadcrumb>
-                {/*下面这部分切换样式，还有些问题*/}
+                {/*判断是否激活*/}
                 <div className={`switcher dark-white ${this.state.switcherOn ? 'active' : ''}`}>
+                    {/*齿轮图标*/}
                     <a className="sw-btn dark-white" onClick={this.switcherOn}>
                         <Icon type="setting" className="text-dark" />
                     </a>

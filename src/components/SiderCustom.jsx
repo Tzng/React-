@@ -18,6 +18,16 @@ class SiderCustom extends Component{
         selectedKey: ''
     };
 
+    componentDidMount() {
+        this.setMenuOpen(this.props);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        this.onCollapse(nextProps.collapsed);
+        this.setMenuOpen(nextProps)
+    }
+
     setMenuOpen = props => {
         const {path} = props;
         this.setState({
@@ -34,6 +44,7 @@ class SiderCustom extends Component{
             mode: collapsed ? 'vertical' : 'inline',
         });
     };
+
     menuClick = e => {
         console.log(this.state);
         this.setState({
@@ -41,6 +52,7 @@ class SiderCustom extends Component{
         });
 
     };
+
     openMenu = v => {
         console.log(v);
         this.setState({
@@ -51,6 +63,7 @@ class SiderCustom extends Component{
     render(){
         return(
             // Sider 侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。
+            // 侧边栏的切换状态可以从其他组件的点击事件进行
             <Sider
                 breakpoint='lg'
                 collapsible

@@ -3,6 +3,7 @@ import {
     Card, Form, Select, InputNumber, Switch, Radio,
     Slider, Button, Upload, Icon, Rate,
 } from 'antd';
+import BreadcrumbCustom from '../BreadcrumbCustom';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
@@ -32,6 +33,7 @@ class Demo extends React.Component {
         };
         return (
             <div className="gutter-box">
+                <BreadcrumbCustom first="表单" second="复杂表单" />
                 <Card title="复杂表单" bordered={false}>
                     <Form onSubmit={this.handleSubmit}>
                         <FormItem
