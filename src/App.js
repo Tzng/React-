@@ -11,12 +11,23 @@ import HeaderCustom from './components/HeaderCustom';
 import SiderCustom from './components/SiderCustom';
 
 class App extends Component {
+
+    state = {
+        collapsed: false
+    }
+
+    toggle = () =>{
+        this.setState({
+            collapsed: !this.state.collapsed,
+        })
+    }
+
   render() {
     return (
         <Layout className = "ant-layout-has-sider">
             <SiderCustom />
             <Layout>
-                <HeaderCustom/>
+                <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed}/>
                 <Content style={{ margin: '0 16px', overflow: 'initial' }}>
                     {/*引入子组件，想要哪一块的内容是可以动态变化的，那就让它渲染*/}
                     {this.props.children}

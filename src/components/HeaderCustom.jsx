@@ -51,7 +51,13 @@ class HeaderCustom extends Component {
 
     render() {
         return (
-            <Header style={headerStyle}>
+            <Header style={{ background: '#fff', padding: 0, height: 65 }} className="custom-theme" >
+                {/*侧边栏收缩按钮*/}
+                <Icon
+                    className="trigger custom-trigger"
+                    type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
+                    onClick={this.props.toggle}
+                />
                 <Menu
                     mode="horizontal" //水平模式
                     style={{lineHeight: '64px', float: 'right'}}
@@ -61,7 +67,7 @@ class HeaderCustom extends Component {
                     </Menu.Item>
                     <Menu.Item key="1">
                         {/*设置位置*/}
-                        <Badge count={25} overflow={10} style={{marginLeft: 10}}>
+                        <Badge count={25} overflowCount={10} style={{marginLeft: 10}}>
                             <Icon type="notification" />
                         </Badge>
                     </Menu.Item>
