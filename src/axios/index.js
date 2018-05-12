@@ -32,3 +32,10 @@ export const gitOauthInfo = access_token => axios({
     method: 'get',
     url: 'https://api.github.com/user?access_token=' + access_token,
 }).then(res => res.data).catch(err => console.log(err));
+
+// easy-mock数据交互
+// 管理员权限获取
+export const admin = () => get({url: config.MOCK_AUTH_ADMIN});
+
+// 游客权限获取
+export const guest = () => get({url: config.MOCK_AUTH_VISITOR});
