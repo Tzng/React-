@@ -30,6 +30,7 @@ import Gallery from "./components/ui/Gallery";
 import TextEditor from "./components/ui/BraftEditor"
 import ExampleAnimations from "./components/animation/ExampleAnimations";
 import BasicAnimations from "./components/animation/BasicAnimations";
+import Dashboard from './components/dashboard/Dashboard';
 
 ReactDOM.render(
     // 引入路由
@@ -37,7 +38,7 @@ ReactDOM.render(
         {/*默认路由,访问根路径的时候，这里的子组件都能渲染*/}
         <Route path={'/'} components={Page}>
             {/*默认路由，这是Route3版本的写法，4是另一种写法了*/}
-            <IndexRedirect to={'/login'}/>
+            <IndexRedirect to={'/app/dashboard/index'}/>
             <Route path={'app'} components={App}>
                 <Route path={'form'}>
                     {/*嵌套路由，子路由渲染，也就是说，在Content中需要出现我们的其他组件*/}
@@ -71,6 +72,7 @@ ReactDOM.render(
                     <Route path={'baseicAnimations'} components={BasicAnimations}/>
                     <Route path={'exampleAnimations'} components={ExampleAnimations}/>
                 </Router>
+                <Route path={'dashboard/index'} component={Dashboard} />
             </Route>
             <Route path={'login'} component={Login}/>
             <Route path={'404'} components={NotFound}/>

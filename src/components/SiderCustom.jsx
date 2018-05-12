@@ -7,6 +7,7 @@ const SubMenu = Menu.SubMenu;
 import { Link } from 'react-router';
 import Spins from "./ui/Spins";
 
+// 侧边栏组件
 class SiderCustom extends Component{
 
     state = {
@@ -22,13 +23,17 @@ class SiderCustom extends Component{
         this.setMenuOpen(this.props);
     }
 
+    // 当props发生变化时执行，初始化render时不执行
     componentWillReceiveProps(nextProps) {
         console.log("传递捡来的新地址："+nextProps);
         this.onCollapse(nextProps.collapsed);
+        // nextProps下一个状态,也就是更新前和更新后的参数
         this.setMenuOpen(nextProps)
     }
 
+    //设置打开菜单，使用数组，查看ANT教程
     setMenuOpen = props => {
+        //从父组件拿地址
         const {path} = props;
         this.setState({
             openKey: path.substr(0, path.lastIndexOf('/')),
@@ -39,6 +44,7 @@ class SiderCustom extends Component{
 
     //展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发
     onCollapse = (collapsed) => {
+        //这个状态并没有和其他的组件共享
         console.log(collapsed);
         this.setState({
             collapsed,
@@ -66,10 +72,12 @@ class SiderCustom extends Component{
             // Sider 侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。
             // 侧边栏的切换状态可以从其他组件的点击事件进行
             <Sider
+                trigger = ""
                 breakpoint='lg'
                 collapsible
                 collapsed={this.state.collapsed}
                 onCollapse={this.onCollapse}
+                style={{overflowY:'auto'}}
             >
                 <div className="logo" />
                 {/*导航菜单，就是左边那一片大的*/}

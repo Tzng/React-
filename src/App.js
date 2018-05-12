@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
         <Layout className = "ant-layout-has-sider">
+            {/*collapsed属性控制收缩*/}
             <SiderCustom path={this.props.location.pathname} collapsed={this.state.collapsed} />
             <Layout>
                 <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} />

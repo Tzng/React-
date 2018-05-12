@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Menu, Icon, Layout, Badge} from 'antd'
+import { Link } from 'react-router';
 
 import screenfull from "screenfull";
 import { gitOauthToken, gitOauthInfo } from '../axios';
@@ -79,7 +80,7 @@ class HeaderCustom extends Component {
                         </MenuItemGroup>
                         <MenuItemGroup title="设置中心">
                             {/*添加单个小菜单*/}
-                            <Menu.Item key="setting:3">个人设置</Menu.Item>
+                            <Menu.Item key="setting:3"><Link to={'/app/table/asynchronoustable'}>个人设置</Link></Menu.Item>
                             <Menu.Item key="setting:4">系统设置</Menu.Item>
                         </MenuItemGroup>
                     </SubMenu>
