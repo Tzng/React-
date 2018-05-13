@@ -20,7 +20,7 @@ class SiderCustom extends Component{
     componentDidMount() {
         this.setMenuOpen(this.props);
     }
-
+lI
     // 当props发生变化时执行，初始化render时不执行
     componentWillReceiveProps(nextProps) {
         console.log("传递捡来的新地址："+nextProps);

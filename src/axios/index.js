@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { get } from './tools';
+import { get, post } from './tools';
 import * as config from './config';
 
 /**
@@ -17,7 +17,7 @@ export const getPros =() => axios.post('http://api.xitu.io/resources/github', {
     console.log(error);
 })
 
-export const npmDependencies = () => axios.get('./npm.json').then(res => res.data).catch(err => console.log(err));
+export const npmDependencies = () => get({url:'./npm.json'});
 
 export const weibo = () => axios.get('./weibo.json').then(res => res.data).catch(err => console.log(err));
 
@@ -37,7 +37,6 @@ export const gitOauthInfo = access_token => axios({
 
 // easy-mock数据交互
 // 管理员权限获取
-export const admin = () => get({url: config.MOCK_AUTH_ADMIN});
-
+export const admin = () => post({url: config.MOCK_AUTH_ADMIN,data:{},headers: {Accept: 'application/json'}});
 // 游客权限获取
-export const guest = () => get({url: config.MOCK_AUTH_VISITOR});
+export const guest = () => post({url: config.MOCK_AUTH_VISITOR,data:{},headers: {Accept: 'application/json'}});

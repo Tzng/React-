@@ -33,8 +33,14 @@ export default class CRouter extends Component {
     requireAuth = (permission, component) => {
         const { store } = this.props;
         const { auth } = store.getState().httpData;
-        if(!auth || !auth.data.permissions.includes(permission)) window.location.hash = '/404';
-        return component;
+        //用户认证
+        if(!auth || auth.data === null) {
+            window.location.hash = '/login';
+            return;
+        }else{
+            return component;
+        }
+
     }
 
     render(){
