@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
                                     </div>
                                     <div className="clear">
                                         <div className="text-muted">收藏</div>
-                                        <h2>301</h2>
+                                        <h2>120</h2>
                                     </div>
                                 </div>
                             </Card>
@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
                                         <Icon type="cloud" className="text-2x" />
                                     </div>
                                     <div className="clear">
-                                        <div className="text-muted">云数据</div>
+                                        <div className="text-muted">总事件数</div>
                                         <h2>30122</h2>
                                     </div>
                                 </div>

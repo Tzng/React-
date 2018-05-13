@@ -33,6 +33,8 @@ module.exports = {
     // This means they will be the "root" imports that are included in JS bundle.
     // The first two entry points enable "hot" CSS and auto-refreshes for JS.
     entry: [
+        //开发环境配置热更新入口，并且在174行加babel
+        'react-hot-loader/patch',
         // Include an alternative client for WebpackDevServer. A client's job is to
         // connect to WebpackDevServer by a socket and get notified about changes.
         // When you save a file, the client will either apply hot updates (in case
@@ -170,6 +172,7 @@ module.exports = {
                 options: {
                     plugins: [
                         ['import', [{ libraryName: 'antd', style: true }]],  // import less
+                        'react-hot-loader/babel'
                     ],
                     // This is a feature of `babel-loader` for webpack (not Babel itself).
                     // It enables caching results in ./node_modules/.cache/babel-loader/
