@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import App from '../App';
 
@@ -26,7 +26,8 @@ import ExampleAnimations from "../components/animation/ExampleAnimations";
 import BasicAnimations from "../components/animation/BasicAnimations";
 import Dashboard from '../components/dashboard/Dashboard';
 
-export default class CRouter extends Comment {
+//这里写错了一个单词，所以一直在报错
+export default class CRouter extends Component {
 
     //组件认证权限限制
     requireAuth = (permission, component) => {
