@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
     Card, Form, Select, InputNumber, Switch, Radio,
     Slider, Button, Upload, Icon, Rate,
 } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;

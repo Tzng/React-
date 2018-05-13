@@ -1,12 +1,10 @@
 import React,{Component} from 'react';
 import {Menu, Icon, Layout,} from 'antd';
+//引入路由
+import { Link } from 'react-router';
 
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
-//引入路由
-import { Link } from 'react-router';
-import Spins from "./ui/Spins";
-
 // 侧边栏组件
 class SiderCustom extends Component{
 
@@ -89,6 +87,9 @@ class SiderCustom extends Component{
                     openKeys={[this.state.openKey]}
                     onOpenChange={this.openMenu}
                 >
+                    <Menu.Item key="/app/dashboard/index">
+                        <Link to={'/app/dashboard/index'}><Icon type="mobile" /><span className="nav-text">首页</span></Link>
+                    </Menu.Item>
                     {/*子菜单一个一个的菜单*/}
                     <SubMenu
                         key="page"
@@ -139,6 +140,13 @@ class SiderCustom extends Component{
                     >
                         <Menu.Item key={"/app/animation/baseicAnimations"}><Link to={'/app/animation/baseicAnimations'}>基础动画</Link></Menu.Item>
                         <Menu.Item key={"/app/animation/exampleAnimations"}><Link to={'/app/animation/exampleAnimations'}>动画案例</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="/app/auth"
+                        title={<span><Icon type="safety" /><span className="nav-text">权限管理</span></span>}
+                    >
+                        <Menu.Item key="/app/auth/basic"><Link to={'/app/auth/basic'}>基础演示</Link></Menu.Item>
+                        <Menu.Item key="/app/auth/routerEnter"><Link to={'/app/auth/routerEnter'}>路由拦截</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
                 <style>

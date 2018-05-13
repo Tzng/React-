@@ -1,7 +1,8 @@
 import React from 'react';
-//第三方组件
-import {Router, Route, hashHistory, IndexRedirect} from 'react-router'
+import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
+import App from '../App';
 
+//路由组件
 import BasicForm from '../components/forms/BasicForm';
 import WrappedForm from '../components/forms/WrappedForm';
 import Page from '../components/Page'

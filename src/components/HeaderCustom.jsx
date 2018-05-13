@@ -50,6 +50,15 @@ class HeaderCustom extends Component {
         }
     }
 
+    menuClick = e => {
+        console.log(e);
+        e.key === 'logout' && this.logout();
+    };
+    logout = () => {
+        localStorage.removeItem('user');
+        this.props.router.push('/login')
+    };
+
     render() {
         return (
             <Header style={{ background: '#fff', padding: 0, height: 65 }} className="custom-theme" >
@@ -62,6 +71,7 @@ class HeaderCustom extends Component {
                 <Menu
                     mode="horizontal" //水平模式
                     style={{lineHeight: '64px', float: 'right'}}
+                    onClick={this.menuClick}
                 >
                     <Menu.Item key="full" onClick={this.screenFull} >
                         <Icon type="arrows-alt" onClick={this.screenFull} />
@@ -77,6 +87,7 @@ class HeaderCustom extends Component {
                         <MenuItemGroup title="用户中心">
                             <Menu.Item key="setting:1">你好，{this.state.user.login}</Menu.Item>
                             <Menu.Item key="setting:2">个人信息</Menu.Item>
+                            <Menu.Item key="logout"><span onClick={this.logout}>退出登录</span></Menu.Item>
                         </MenuItemGroup>
                         <MenuItemGroup title="设置中心">
                             {/*添加单个小菜单*/}

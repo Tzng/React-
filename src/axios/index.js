@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { get } from './tools';
+import * as config from './config';
 
 /**
  * 为什么这里用js呢，因为下面的那些都是JSX写的，所以用jsx，这个是用js写的

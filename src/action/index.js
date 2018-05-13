@@ -11,7 +11,7 @@ export const receiveData = (data, category) => ({
     data,
     category
 });
-
+//action
 export const fetchData = ({funcName, params, stateName}) => dispatch => {
   !stateName && (stateName = funcName);
   dispatch(requestData(stateName));
