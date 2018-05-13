@@ -35,7 +35,7 @@ class Drags extends React.Component {
             <div className="gutter-example button-demo">
                 <BreadcrumbCustom first="UI" second="拖拽" />
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable zIndex={100} {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>
@@ -45,7 +45,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable axis="x" {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>
@@ -54,7 +54,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable axis="y" {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>
@@ -63,7 +63,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable onDrag={this.handleDrag} {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>
@@ -73,7 +73,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable handle="strong" {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo no-cursor'}>
@@ -83,7 +83,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable cancel="strong" {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>
@@ -93,7 +93,7 @@ class Drags extends React.Component {
                             </Draggable>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" md={6}>
                         <div className="gutter-box">
                             <Draggable bounds={{top: -100, left: -100, right: 100, bottom: 100}} zIndex={5} {...dragHandlers}>
                                 <Card bordered={false} className={'dragDemo'}>

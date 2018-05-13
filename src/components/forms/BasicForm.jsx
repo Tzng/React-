@@ -100,7 +100,7 @@ class BasicForms extends Component {
                 <BreadcrumbCustom first="表单" second="基础表单" />
                 {/*Row Col Card都是用来进行布局的*/}
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="注册表单" bordered={false}>
                                 <Form onSubmit={this.handleSubmit}>
@@ -196,14 +196,14 @@ class BasicForms extends Component {
                                         extra="我们必须确认你不是机器人."
                                     >
                                         <Row gutter={8}>
-                                            <Col span={12}>
+                                            <Col md={12}>
                                                 {getFieldDecorator('captcha', {
                                                     rules: [{ required: true, message: '请输入你获取的验证码!' }],
                                                 })(
                                                     <Input size="large" />
                                                 )}
                                             </Col>
-                                            <Col span={12}>
+                                            <Col md={12}>
                                                 <Button size="large">获取验证码</Button>
                                             </Col>
                                         </Row>
@@ -222,7 +222,7 @@ class BasicForms extends Component {
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="登录表单" bordered={false}>
                                 <LoginForm />
@@ -231,14 +231,14 @@ class BasicForms extends Component {
                     </Col>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={14}>
+                    <Col className="gutter-row" md={14}>
                         <div className="gutter-box">
                             <Card title="水平表单" bordered={false}>
                                 <HorizontalForm />
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={10}>
+                    <Col className="gutter-row" md={10}>
                         <div className="gutter-box">
                             <Card title="弹层表单" bordered={false}>
                                 <ModalForm />

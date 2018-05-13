@@ -10,7 +10,7 @@ const BasicTables = () => (
     <div className="gutter-example">
         <BreadcrumbCustom first="表格" second="基础表格" />
         <Row gutter={16}>
-            <Col className="gutter-row" span={24}>
+            <Col className="gutter-row" md={24}>
                 <div className="gutter-box">
                     <Card title="基础表格" bordered={false}>
                         <BasicTable />
@@ -18,7 +18,7 @@ const BasicTables = () => (
                 </div>
             </Col>
 
-            {/*<Col className="gutter-row" span={10}>*/}
+            {/*<Col className="gutter-row" md={10}>*/}
             {/*<div className="gutter-box">*/}
             {/*<Card title="弹层表单" bordered={false}>*/}
             {/*</Card>*/}
@@ -26,7 +26,7 @@ const BasicTables = () => (
             {/*</Col>*/}
         </Row>
         <Row gutter={16}>
-            <Col className="gutter-row" span={24}>
+            <Col className="gutter-row" md={24}>
                 <div className="gutter-box">
                     <Card title="基础表格" bordered={false}>
                         <SelectTable />
@@ -35,14 +35,14 @@ const BasicTables = () => (
             </Col>
         </Row>
         <Row gutter={16}>
-            <Col className="gutter-row" span={12}>
+            <Col className="gutter-row" md={12}>
                 <div className="gutter-box">
                     <Card title="可控的筛选和排序" bordered={false}>
                         <SortTable />
                     </Card>
                 </div>
             </Col>
-            <Col className="gutter-row" span={12}>
+            <Col className="gutter-row" md={12}>
                 <div className="gutter-box">
                     <Card title="自定义筛选" bordered={false}>
                         <SearchTable />

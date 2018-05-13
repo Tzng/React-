@@ -13,7 +13,7 @@ class Echarts extends React.Component {
                 <BreadcrumbCustom first="Chart" second="Echarts" />
                 {/*做布局用的*/}
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="区域图" bordered={false}>
                                 <EchartsArea />
@@ -22,14 +22,14 @@ class Echarts extends React.Component {
                     </Col>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="关系图" bordered={false}>
                                 <EchartsGraphnpm />
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card title="饼图" bordered={false}>
                                 <EchartsPie />
@@ -38,7 +38,7 @@ class Echarts extends React.Component {
                     </Col>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="散点图" bordered={false}>
                                 <EchartsScatter />

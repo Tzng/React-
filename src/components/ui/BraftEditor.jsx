@@ -22,7 +22,7 @@ class TextEditor extends React.Component {
             <div className="gutter-example button-demo">
                 <BreadcrumbCustom first="UI" second="国内的富文本"/>
                 <Row gutter={16}>
-                    <Col className="gutter-row" span={24}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card title="富文本编辑器" bordered={false}>
                                 <BraftEditor {...editorProps}/>
