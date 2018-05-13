@@ -116,6 +116,12 @@ class HeaderCustom extends Component {
                         </MenuItemGroup>
                     </SubMenu>
                 </Menu>
+                <style>{`
+                    .ant-menu-submenu-horizontal > .ant-menu {
+                        width: 120px;
+                        left: -50px;
+                    }
+                `}</style>
             </Header>
         )
     }

@@ -40,7 +40,6 @@ export default class CRouter extends Component {
         }else{
             return component;
         }
-
     }
 
     render(){
