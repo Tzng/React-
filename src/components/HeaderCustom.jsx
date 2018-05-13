@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Menu, Icon, Layout, Badge} from 'antd'
+import {Menu, Icon, Layout, Badge, Popover} from 'antd'
 import { Link } from 'react-router';
+import SiderCustom from './SiderCustom';
+import { connect } from 'react-redux';
 
 import screenfull from "screenfull";
 import { gitOauthToken, gitOauthInfo } from '../axios';
@@ -21,7 +23,9 @@ const headerStyle = {
 class HeaderCustom extends Component {
 
     state = {
-        user : ''
+        user : '',
+        //是否显示
+        visible: false
     };
 
     componentDidMount(){
@@ -40,6 +44,10 @@ class HeaderCustom extends Component {
                     localStorage.setItem('user', JSON.stringify(info))
                 })
             })
+        }else{
+            this.setState({
+                user: _user
+            });
         }
     }
 
@@ -60,14 +68,26 @@ class HeaderCustom extends Component {
     };
 
     render() {
+
+        const { responsive, path } = this.props;
+        //根据不同的响应模式进行变化，如果是移动端，则显示侧边栏~
+
         return (
             <Header style={{ background: '#fff', padding: 0, height: 65 }} className="custom-theme" >
-                {/*侧边栏收缩按钮*/}
-                <Icon
-                    className="trigger custom-trigger"
-                    type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
-                    onClick={this.props.toggle}
-                />
+                {
+                    responsive.data.isMobile ? (
+                        <Popover content = {<SiderCustom path={path} popoverHide={this.popoverHide} />} trigger="click"
+                            placement="bottomLeft" visible={this.state.visible}
+                            onVisibleChange={this.handleVisibleChange}>
+                            <Icon type="bars" className="trigger custom-trigger"/>
+                        </Popover>
+                    ):(// 侧边栏收缩按钮
+                    <Icon
+                        className="trigger custom-trigger"
+                        type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
+                        onClick={this.props.toggle}
+                    />)
+                }
                 <Menu
                     mode="horizontal" //水平模式
                     style={{lineHeight: '64px', float: 'right'}}
@@ -101,4 +121,8 @@ class HeaderCustom extends Component {
     }
 }
 
-export default HeaderCustom;
+const mapStateToProps = state => {
+    const { responsive = { data: {}} } = state.httpData;
+    return {responsive};
+}
+export default connect(mapStateToProps)(HeaderCustom)

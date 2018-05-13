@@ -55,7 +55,9 @@ lI
         this.setState({
             selectedKey: e.key
         });
-
+        console.log(this.state);
+        const { popoverHide } = this.props;     // 响应式布局控制小屏幕点击菜单时隐藏菜单操作
+        popoverHide && popoverHide();
     };
 
     openMenu = v => {
@@ -70,9 +72,8 @@ lI
             // Sider 侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 Layout 中。
             // 侧边栏的切换状态可以从其他组件的点击事件进行
             <Sider
-                trigger = ""
+                trigger = {null}
                 breakpoint='lg'
-                collapsible
                 collapsed={this.state.collapsed}
                 onCollapse={this.onCollapse}
                 style={{overflowY:'auto'}}

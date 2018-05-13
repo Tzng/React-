@@ -1,5 +1,7 @@
 'use strict';
 
+// 这是用来帮我们找代码的
+
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
@@ -52,4 +54,5 @@ module.exports = {
     appNodeModules: resolveApp('node_modules'),
     publicUrl: getPublicUrl(resolveApp('package.json')),
     servedPath: getServedPath(resolveApp('package.json')),
+    vendorConfig: resolveApp('config/vendor.config.js')
 };

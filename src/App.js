@@ -25,6 +25,22 @@ class App extends Component {
         user && receiveData(user, 'auth');
         // receiveData({a: 213}, 'auth');
         // fetchData({funcName: 'admin', stateName: 'auth'});
+        //侧边栏的显示和收缩
+        this.getClienWidth();
+        window.onresize = () => {
+            console.log('屏幕变化了');
+            this.getClienWidth();
+            console.log(document.body.clientWidth);
+        }
+    };
+
+    //获取当前浏览器宽度并设置responsive管理响应式
+    getClienWidth = () =>{
+        const { receiveData } = this.props;
+        //获取狂赌
+        const clientWidth = document.body.clientWidth;
+        console.log(clientWidth);
+        receiveData({isMobile: clientWidth <= 992}, 'responsive')
     }
 
     toggle = () =>{
@@ -35,13 +51,14 @@ class App extends Component {
 
   render() {
       console.log(this.props.auth);
-      const { auth, router } = this.props;
+      const { auth, router, responsive } = this.props;
       return (
+          // 进行条件渲染
           <Layout className = "ant-layout-has-sider">
               {/*collapsed属性控制收缩*/}
-              <SiderCustom path={this.props.location.pathname} collapsed={this.state.collapsed} />
+              {!responsive.data.isMobile && <SiderCustom path={this.props.location.pathname} collapsed={this.state.collapsed} />}
               <Layout>
-                  <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} />
+                  <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} user={auth.data || {}} router={router}  path={this.props.location.pathname} />
                   <Content style={{ margin: '0 16px', overflow: 'initial' }}>
                       {/*引入子组件，想要哪一块的内容是可以动态变化的，那就让它渲染*/}
                       {this.props.children}
@@ -50,14 +67,25 @@ class App extends Component {
                       我是底部文件
                   </Footer>
               </Layout>
+              {
+                  responsive.data.isMobile && (   // 手机端对滚动很慢的处理
+                      <style>
+                          {`
+                            #root{
+                                height: auto;
+                            }
+                        `}
+                      </style>
+                  )
+              }
           </Layout>
       );
   }
 }
 
 const mapStateToProps = state => {
-    const { auth = {data: {}} } = state.httpData;
-    return {auth};
+    const { auth = {data: {}}, responsive = {data: {}} } = state.httpData;
+    return {auth, responsive};
 };
 const mapDispatchToProps = dispatch => ({
     receiveData: bindActionCreators(receiveData, dispatch)
